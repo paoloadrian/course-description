@@ -1,0 +1,39 @@
+<div *ngIf="course">
+  <h2>{{course.name}} details!</h2>
+  <div>
+    <label>ID: </label>{{course.id}}
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="course.name" placeholder="name" />
+  </div>
+  <div>
+    <label>Description: </label>
+    <input [(ngModel)]="course.description" placeholder="description" />
+  </div>
+  <div>
+    -----------------------------------
+    <br>
+    <label>Textbooks: </label>
+    <br>
+    -----------------------------------
+    <div *ngFor="let textbook of course.textbooks; let i = index;">
+      <div>
+        <label>Author: </label>
+        <input [(ngModel)]="textbook.author" placeholder="description" />
+      </div>
+      <div>
+        <label>Title: </label>
+        <input [(ngModel)]="textbook.title" placeholder="description" />
+      </div>
+      <button (click)="saveTextbook(i)">Save</button>
+      <button (click)="discardTextbook(i)">Discard</button>
+      <br>
+      -----------------------------------
+    </div>
+  </div>
+  <br>
+  <button (click)="saveAll()">Save All</button>
+  <button (click)="discardAll()">Discard All</button>
+  <br>
+  <button (click)="goBack()">Back</button>
+</div>

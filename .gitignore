@@ -1,0 +1,6 @@
+.vscode
+.idea
+typings/**
+node_modules
+compiled
+**/*npm-debug.log.*
